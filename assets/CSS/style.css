@@ -1,1 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://i.pinimg.com/originals/b9/a0/d6/b9a0d6fe09045c766f382c1e63e2438a.gif");
+    height: 100vh;
+}
+
+.container {
+    cursor: pointer;
+    position: relative; /* Add relative positioning for proper stacking */
+}
+
+span {
+    position: relative;
+    font-size: 10rem;
+    color: rgb(132,146,36);
+    font-weight: bolder;
+    line-height: 1;
+    display: inline-block;
+    font-family: 'Indie Flower', cursive;
+    margin-right: 90px; 
+}
+
+.circle {
+    background-color: rgb(202,215,102);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px solid rgb(211, 228, 203);
+    z-index: -1;
+    margin-right: 60px; 
+}
+
+.matcha {
+    font-size: 8rem;
+    animation: rotate 4s linear infinite;
+    z-index: 1;
+}
+
+span.active {
+    animation: jump 2s ease-in-out;
+}
+
+.gif {
+    width: 300px; /* Adjust the width as needed */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Center the GIF and move it lower */
+    position: absolute;
+    top: 100%; /* Position it below the letters */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(0, 0) rotate(180deg);
+    }
+    100% {
+        transform: scale(2.5) translate(0, -100px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
